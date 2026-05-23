@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <h2>C's World</h2>
+
+        <nav>
+            <a href="/admin">Dashboard</a>
+            <a href="/admin/create">Create Article</a>
+            <a href="/">View Website</a>
+        </nav>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <div class="top-bar">
+            <h1>All Articles</h1>
+
+            <a href="/admin/create" class="create-btn">
+                + New Article
+            </a>
+        </div>
+
+        <!-- DYNAMIC ARTICLES -->
+        <div class="article-item" th:each="article : ${articles}">
+
+            <div>
+                <h3 th:text="${article.title}">Title</h3>
+                <p th:text="${article.date}">Date</p>
+            </div>
+
+            <div class="actions">
+
+                <!-- EDIT ROUTE -->
+                <a th:href="@{'/admin/edit/' + ${article.id}}" class="edit-btn">
+                    Edit
+                </a>
+
+                <!-- DELETE ROUTE -->
+                <a th:href="@{'/admin/delete/' + ${article.id}}" class="delete-btn">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

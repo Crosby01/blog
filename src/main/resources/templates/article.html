@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title th:text="${article.title}">
+        Article
+    </title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    
+
+    <div class="article-page">
+
+        <!-- BACK BUTTON -->
+
+        <a href="/"
+           class="back-btn">
+            ← Back Home
+        </a>
+
+        <!-- ARTICLE IMAGE -->
+
+        <img th:src="${article.imageUrl}" alt="Article Image">
+
+        
+
+        <!-- ARTICLE TITLE -->
+
+        <h1 th:text="${article.title}">
+            Article Title
+        </h1>
+
+        <!-- ARTICLE DATE -->
+
+        <p class="article-date"
+           th:text="${article.date}">
+            May 13, 2026
+        </p>
+
+        <!-- ARTICLE CONTENT -->
+
+        <div class="article-text">
+
+            <p th:text="${article.content}">
+                Article content goes here.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

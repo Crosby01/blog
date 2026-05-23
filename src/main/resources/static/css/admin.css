@@ -1,0 +1,100 @@
+/* =========================
+   FORM IMPROVEMENTS
+========================= */
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+/* TEXTAREA */
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: Arial, sans-serif;
+}
+
+/* BUTTON HOVER */
+
+form button:hover,
+.create-btn:hover,
+.edit-btn:hover {
+    opacity: 0.9;
+}
+
+/* DELETE BUTTON HOVER */
+
+.delete-btn:hover {
+    opacity: 0.9;
+}
+
+/* FORM PAGE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .form-page {
+        margin: 20px;
+        padding: 25px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .article-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .actions {
+        width: 100%;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =========================
+   EDIT PAGE HEADER
+========================= */
+
+.page-back {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* =========================
+   FORM ANIMATION
+========================= */
+
+.form-page {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

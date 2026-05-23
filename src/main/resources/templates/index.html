@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C's World Blog</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">C's World</div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/admin">Admin</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Welcome to C's World</h1>
+    <p>
+        Read insightful articles on tech, business,
+        productivity and software engineering.
+    </p>
+</section>
+
+<!-- ARTICLES SECTION -->
+<section class="articles-section">
+
+    <!-- LOOP THROUGH ARTICLES -->
+    <div class="article-card" th:each="article : ${articles}">
+
+        <img th:src="${article.imageUrl}" alt="Article Image">
+
+        <div class="article-content">
+
+            <p class="article-meta" th:text="${article.date}">
+                Date
+            </p>
+
+            <h2 th:text="${article.title}">
+                Title
+            </h2>
+
+            <p th:text="${article.content}">
+                Content preview...
+            </p>
+
+            <a th:href="@{'/article/' + ${article.id}}" class="read-btn">
+                Read Article
+            </a>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 C's World. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Article</title>
+
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<div class="form-page">
+
+    <h1>Create New Article</h1>
+
+    <form action="/admin/create" method="post">
+
+        <!-- TITLE -->
+        <label>Article Title</label>
+        <input
+                type="text"
+                name="title"
+                placeholder="Enter article title"
+                required
+        >
+
+        <!-- IMAGE URL -->
+        <label>Cover Image URL</label>
+        <input
+                type="text"
+                name="imageUrl"
+                placeholder="Paste image URL"
+                required
+        >
+
+        <!-- CONTENT -->
+        <label>Article Content</label>
+        <textarea
+                name="content"
+                rows="12"
+                placeholder="Write your article content here..."
+                required>
+        </textarea>
+
+        <!-- SUBMIT -->
+        <button type="submit">
+            Publish Article
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
